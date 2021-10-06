@@ -21,8 +21,8 @@ class Scientific extends Literature {
     @Override
     public String toString() {
         return  super.toString() +
-                "fieldScience='" + fieldScience + '\'' +
-                ", quantity=" + quantity +
+                " fieldScience= " + fieldScience + '\'' +
+                " quantity=" + quantity +
                 '}';
     }
 }
