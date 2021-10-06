@@ -6,8 +6,10 @@ public class Book {
 
         Scientific sci = new Scientific("Portal", "A", "B", 120, 2000, 123, "Aboba", "fizika", 555);
 
-        System.out.println(sci.toString());
+   //     System.out.println(sci.toString());
 
+        Period periodic = new Period("A", "B", "q", 123, 2000, 555, "J", " asdf ", 3000);
 
+        System.out.println(periodic.toString());
     }
 }
