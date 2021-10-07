@@ -17,9 +17,7 @@
         this.bookName = bookName;
     }
 
-
-
-     public String getBookName() {
+    public String getBookName() {
         return bookName;
     }
 
