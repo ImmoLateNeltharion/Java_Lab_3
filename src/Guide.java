@@ -1,4 +1,4 @@
-public class Guide extends Literature {
+public class        Guide extends Literature {
 
     private String direction;
     private String tom;
@@ -17,7 +17,7 @@ public class Guide extends Literature {
     public String getDirection() { return direction;}
     public void setDirection(String direction) { this.direction = direction; }
 
-    public String getTom() {return tom;}
+    public String getTom() { return tom;}
     public void setTom(String tom) { this.tom = tom;}
 
     public int getChapter() { return chapter;}

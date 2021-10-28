@@ -1,4 +1,8 @@
- class Literature {
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+
+class Literature {
     private int code;
     private int year;
     private int pages;
@@ -7,7 +11,7 @@
     private String author;
     private String bookName;
 
-    public Literature(String bookName, String author, String genre, int pages, int year, int code, String developerName ) {
+    public Literature(String bookName, String author, String genre, int pages, int year, int code, String developerName) {
         this.code = code;
         this.year = year;
         this.pages = pages;
@@ -16,6 +20,16 @@
         this.author = author;
         this.bookName = bookName;
     }
+
+ /*   public static Comparator<Literature> NameCorparator = new CompareByName()
+    {
+        public int compare(Literature book1, Literature book2)
+        {
+            return book1.getBookName().compareTo(book2.getBookName());
+        }
+    };*/
+
+
 
     public String getBookName() {
         return bookName;
@@ -84,8 +98,15 @@
         return "It is a book  " + bookName + " Author`s " + author + " Genre " + genre + " Contains " + pages + " pages Released in " + year + " from " + developerName + " with code " + code;
     }
 
-
 }
+
+
+
+
+
+
+
+
 
 
 

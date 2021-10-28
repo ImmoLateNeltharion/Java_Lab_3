@@ -1,3 +1,7 @@
+import java.util.Collection;
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Book {
     public static void main(String[] args) {
         Literature book = new Literature("'Asya'", "Tolstoy", "Roman", 100, 1900, 1223, "'ProzaDevelop' ");
@@ -18,10 +22,27 @@ public class Book {
 
         ListLiterature list = new ListLiterature();
 
-        list.setList(book);
-        list.setList(periodic);
-        list.setList(gid);
+    //    list.setList(book);
+    //    list.setList(periodic);
+    //    list.setList(gid);
 
-        list.printList();
+    //    list.printList();
+
+    //    book.compareTo()
+
+
+
+        Literature[] arrayBook = new Literature[3];
+        arrayBook[0] = sci;
+        arrayBook[1] = periodic;
+        arrayBook[2] = gid;
+
+        for(int i = 0; i < arrayBook.length-1; i++)
+        {
+            if (arrayBook[i].getCode() > arrayBook[i+1].getCode())
+            {
+                arrayBook[i] = arrayBook[i+1];
+            }
         }
     }
+}
