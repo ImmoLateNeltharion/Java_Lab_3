@@ -1,5 +1,3 @@
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Comparator;
 
 class Literature {
@@ -20,16 +18,6 @@ class Literature {
         this.author = author;
         this.bookName = bookName;
     }
-
- /*   public static Comparator<Literature> NameCorparator = new CompareByName()
-    {
-        public int compare(Literature book1, Literature book2)
-        {
-            return book1.getBookName().compareTo(book2.getBookName());
-        }
-    };*/
-
-
 
     public String getBookName() {
         return bookName;
@@ -95,8 +83,23 @@ class Literature {
 
 
     public String toString() {
-        return "It is a book  " + bookName + " Author`s " + author + " Genre " + genre + " Contains " + pages + " pages Released in " + year + " from " + developerName + " with code " + code;
+        return "It is a book " + bookName + " author`s " + author + " genre " + genre + " contains " + pages + " pages, released in " + year + " from " + developerName + " with code " + code;
     }
+
+    class SortedByName implements Comparator<Literature> {
+        public int compare(Literature obj1, Literature obj2) {
+            String str1 = ((Literature) obj1).getBookName();
+            String str2 = ((Literature) obj2).getBookName();
+            return str1.compareTo(str2);
+        }
+    }
+/*
+    public static final Comparator<Literature> COMPARE_BY_COUNT = new Comparator<Literature>() {
+        @Override
+        public int compare(Literature lhs, Literature rhs) {
+            return lhs.getYear() - rhs.getYear();
+        }
+    };*/
 
 }
 

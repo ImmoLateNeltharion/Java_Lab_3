@@ -1,4 +1,4 @@
-public class        Guide extends Literature {
+public class Guide extends Literature {
 
     private String direction;
     private String tom;
