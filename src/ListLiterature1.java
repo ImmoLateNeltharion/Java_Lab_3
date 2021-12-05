@@ -1,10 +1,13 @@
-    import javax.lang.model.type.ArrayType;
-    import java.io.*;
-    import java.util.*;
-    import java.io.ObjectInputStream;
-    import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
 
-    class ListLiterature {
+    class ListLiterature1 {
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
             ArrayList comm = new ArrayList();
@@ -35,11 +38,7 @@
                         show(comm);
                         break;
                     case 5:
-                        write(comm);
-                        break;
-                    case 6:
-                        read(comm);
-                        break;
+                        Save(comm);
                     case 0: break;
                         default:
                         System.out.println("Choose correct num\n");
@@ -149,25 +148,25 @@
                     break;
             }
         }
-        public static void write(List comm)
+        public static void Save(List comm)
         {
             try {
 
-                FileOutputStream fos = new FileOutputStream("file.bin");
-                try
-                {
-                    ObjectOutputStream oos = new ObjectOutputStream(fos);
+                FileOutputStream fos = new FileOutputStream("file.txt");
+                    try
+                    {
+                        ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-                    for (int i =0; i<3; i++) {
-                        oos.writeObject(comm.get(i));
+                        for (int i =0; i<comm.size(); i++) {
+                            oos.writeObject(comm.get(i));
+                        }
+                        oos.close();
                     }
-                    oos.close();
-                }
 
-                catch (IOException e)
-                {
-                    e.printStackTrace();
-                }
+                    catch (IOException e)
+                    {
+                        e.printStackTrace();
+                    }
             }
             catch (FileNotFoundException e)
             {
@@ -175,28 +174,5 @@
             }
 
         }
-
-        public static void read(List comm)
-        {
-            ArrayList buff = new ArrayList();               //буферный лист
-            try {
-                FileInputStream fis = new FileInputStream("file.bin");
-                try {
-                    ObjectInputStream ois = new ObjectInputStream(fis);
-                    for (int i = 0; i< comm.size(); i++) {
-                        buff.add(ois.readObject());
-                    }
-                    show(buff);
-                    ois.close();
-
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                }
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
     }
+

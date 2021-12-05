@@ -1,6 +1,6 @@
 import java.util.Comparator;
 
-class Literature {
+class Literature implements java.io.Serializable{
     private int code;
     private int year;
     private int pages;
